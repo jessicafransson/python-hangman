@@ -1,7 +1,7 @@
 
 
 
-## Creating the Heroku app
+## Created the Heroku app
 
 When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
 
@@ -10,10 +10,12 @@ When you create the app, you will need to add two buildpacks from the _Settings_
 
 You must then create a _Config Var_ called `PORT`. Set this to `8000`
 
-Inspiration and doc of text:
+## Inspiration and doc of text:
 
-Kite on youtube
+### Kite on youtube
 
 https://www.youtube.com/watch?v=m4nEnsavl6w
 
+### Shaun Halverson on youtube
 
+https://www.youtube.com/watch?v=pFvSb7cb_Us&t=71s
