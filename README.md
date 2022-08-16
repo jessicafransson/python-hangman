@@ -19,3 +19,9 @@ https://www.youtube.com/watch?v=m4nEnsavl6w
 ### Shaun Halverson on youtube
 
 https://www.youtube.com/watch?v=pFvSb7cb_Us&t=71s
+
+## Hangman symbols
+
+### Credit for the symbols for hanging man from Chris Horton on github
+
+https://gist.github.com/chrishorton/8510732aa9a80a03c829b09f12e20d9c
