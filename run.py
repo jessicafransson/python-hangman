@@ -32,6 +32,15 @@ def initialise_game():
     settings = input("\n")
     if settings == "1":
       options = True
+      difficulty = "default"
+      return difficulty
+
+    elif settings == "2":
+      options = True
+      game_rules()
+
+    else:
+      print("Please select 1 or 2", "choice")
 
 
 
