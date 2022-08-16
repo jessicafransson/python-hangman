@@ -1,4 +1,14 @@
+## Hangman
 
+Hangman is a game meant to be something to pass time with, guessing letters of a word. 
+It's a Python terminal game, which runs on Heroku. 
+The target for this game is someone that needs a few minutes break to pass time. 
+
+## How to play
+
+* Player gets displayed a view of the game, and gets information to choose a letter.
+* Player gets information if the guess is correct or false
+* The player is displayed with a presentation of previous guesses
 
 
 ## Created the Heroku app
@@ -14,14 +24,14 @@ You must then create a _Config Var_ called `PORT`. Set this to `8000`
 
 ### Kite on youtube
 
-https://www.youtube.com/watch?v=m4nEnsavl6w
+[Kite on Youtube](https://www.youtube.com/watch?v=m4nEnsavl6w) - Kite's youtube channel, and the video of inspiration here. 
 
 ### Shaun Halverson on youtube
 
-https://www.youtube.com/watch?v=pFvSb7cb_Us&t=71s
+[Shaun on YouTube](https://www.youtube.com/watch?v=pFvSb7cb_Us&t=71s) - Shauns youtube channel, and the video of inspiration here.
 
 ## Hangman symbols
 
 ### Credit for the symbols for hanging man from Chris Horton on github
 
-https://gist.github.com/chrishorton/8510732aa9a80a03c829b09f12e20d9c
+[Symbols](https://gist.github.com/chrishorton/8510732aa9a80a03c829b09f12e20d9c) - I got the symbols for hangman from here.
