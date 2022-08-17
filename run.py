@@ -3,9 +3,6 @@ from words import word_list
 
 
 print("Welcome to Hangman, let's play!")
-    """
-    Welcome message for the players to know what game this is
-    """
 
 def get_word():
   """ 
@@ -42,57 +39,46 @@ def initialise_game():
     else:
       print("Please select 1 or 2", "choice")
 
-
-
-
-HANGMANPICS = ['''
-  +---+
-  |   |
-      |
-      |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
-      |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
-  |   |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
- /|   |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
- /    |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
- / \  |
-      |
-=========
-]
+def print_hangman(wrong):
+  if(wrong == 0):
+    print("\n+---+")
+    print("    |")
+    print("    |")
+    print("    |")
+    print("   ===")
+  elif(wrong == 1): 
+    print("\n+---+")
+    print("O   |")
+    print("    |")
+    print("    |")
+    print("   ===")
+  elif(wrong == 2):
+    print("\n+---+")
+    print("O   |")
+    print("|   |")
+    print("    |")
+    print("   ===")
+  elif(wrong == 3):
+    print("\n+---+")
+    print(" O  |")
+    print("/|  |")
+    print("    |")
+    print("   ===")
+  elif(wrong == 4):
+    print("\n+---+")
+    print(" O  |")
+    print("/|\ |")
+    print("    |")
+    print("   ===")
+  elif(wrong == 5):
+    print("\n+---+")
+    print(" O  |")
+    print("/|\ |")
+    print("/   |")
+    print("   ===")
+  elif(wrong == 6):
+    print("\n+---+")
+    print(" O   |")
+    print("/|\  |")
+    print("/ \  |")
+    print("    ===")
