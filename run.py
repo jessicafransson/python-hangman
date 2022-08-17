@@ -13,14 +13,7 @@ randomWord = random.choice(wordDictionary)
 
 for x in randomWord:
   print("_", end="")
-
-def get_word():
-  """ 
-  Get the words to uppercase for easier readability
-  """
-  word = random.choice(word_list)
-  return word.upper()
-
+  
 def get_random_word():
   """
   Pick a random word from text file to be used in the game
@@ -88,3 +81,45 @@ def printWord(guessedLetters):
       print(" ", end=" ")
     counter+=1
   return rightLetters
+
+def printLines():
+  """
+  """
+  print("\r")
+  for char in randomWord:
+    print("\u203E", end=" ")
+  
+lenght_of_word_to_guess = len(randomWord)
+amount_of_times_wrong = 0
+current_guess_index = 0
+current_letters_guessed = []
+current_letters_right = 0
+
+while(amount_of_times_wrong != 6 and current_letters_right != lenght_of_word_to_guess):
+  print("\nThese letters are your previous guesses: ")
+  for letter in current_letters_guessed:
+    print(letter, end=" ")
+  """
+  prompt user for input
+  """
+  letterGuessed = input("Guess a letter or a word: ")
+  """
+  If user is right
+  """
+  if(randomWord[current_guess_index] == letterGuessed):
+    print_hangman(amount_of_times_wrong)
+    ### print word
+    current_guess_index+=1
+    current_letters_guessed.append(letterGuessed)
+    printLines()
+  ### User was wrong
+  else:
+    amount_of_times_wrong+=1
+    current_letters_guessed.appent(letterGuessed)
+    ### Update drawing
+    print_hangman(amount_of_times_wrong)
+    ### Print the word
+    current_letters_right = printWord(current_letters_guessed)
+    printLines()
+
+print("Game is over, cheers for the game!")
