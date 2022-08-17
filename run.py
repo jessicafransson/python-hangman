@@ -4,7 +4,7 @@ import random
 print("Welcome to Hangman, let's play!")
 print("________________________________")
 
-wordDictionary = ["appartment", "house", "flowers", "diamonds", "python", "javascript", "singer", "music", "developer"]
+wordDictionary = ["appartment", "house", "flowers", "diamonds", "python", "javascript", "singer", "music", "developer", "system", "book", "movie", "renovation", "display", "credit", "collection", "tool", "podcast", "learning"]
 
 """ 
 Choose a random word
@@ -69,7 +69,7 @@ def print_hangman(wrong):
     print("    ===")
 
 def printWord(guessedLetters):
-  """ Display the guesses being made and counter
+  """ Display the guesses being made and counting
   """
   counter=0
   rightLetters=0
@@ -96,23 +96,25 @@ current_letters_guessed = []
 current_letters_right = 0
 
 while(amount_of_times_wrong != 6 and current_letters_right != lenght_of_word_to_guess):
-  print("\nThese letters are your previous guesses: ")
+  print("This is what you have guessed: \n")
   for letter in current_letters_guessed:
     print(letter, end=" ")
   """
   prompt user for input
   """
-  letterGuessed = input("Guess a letter or a word: ")
+  letterGuessed = input("Guess a letter: ")
   """
   If user is right
   """
   if(randomWord[current_guess_index] == letterGuessed):
     print_hangman(amount_of_times_wrong)
-    ### print word
+    """ print word
+    """
     current_guess_index+=1
     current_letters_guessed.append(letterGuessed)
     printLines()
-  ### User was wrong
+  """ When user was wrong
+  """
   else:
     amount_of_times_wrong+=1
     current_letters_guessed.append(letterGuessed)
@@ -122,4 +124,4 @@ while(amount_of_times_wrong != 6 and current_letters_right != lenght_of_word_to_
     current_letters_right = printWord(current_letters_guessed)
     printLines()
 
-print("Game is over, cheers for the game!")
+print("Game over! Play again?")
