@@ -13,7 +13,7 @@ randomWord = random.choice(wordDictionary)
 
 for x in randomWord:
   print("_", end="")
-  
+
 def get_random_word():
   """
   Pick a random word from text file to be used in the game
@@ -115,7 +115,7 @@ while(amount_of_times_wrong != 6 and current_letters_right != lenght_of_word_to_
   ### User was wrong
   else:
     amount_of_times_wrong+=1
-    current_letters_guessed.appent(letterGuessed)
+    current_letters_guessed.append(letterGuessed)
     ### Update drawing
     print_hangman(amount_of_times_wrong)
     ### Print the word
