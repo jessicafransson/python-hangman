@@ -35,3 +35,10 @@ You must then create a _Config Var_ called `PORT`. Set this to `8000`
 ### Credit for the symbols for hanging man from Chris Horton on github
 
 [Symbols](https://gist.github.com/chrishorton/8510732aa9a80a03c829b09f12e20d9c) - I got the symbols for hangman from here.
+
+
+## Testing and deploying
+
+### Testing thru the Pep8 website 
+
+[Pep8](http://pep8online.com/) - I tested my Python code here for validation.

@@ -60,6 +60,7 @@ def printWord(guessedLetters):
     """
     counter = 0
     rightLetters = 0
+    # letters_guessed = []
     for char in randomWord:
         if (char in guessedLetters):
             print(randomWord[counter].upper(), end=" ")
@@ -111,5 +112,16 @@ if __name__ == "__main__":
         current_letters_right = printWord(current_letters_guessed)
         printLines()
         print_hangman(amount_of_times_wrong)
-
+        print("Guesses left: {}".format(6-amount_of_times_wrong))
     print("Game over! Play again?")
+
+
+    if len(letters_guessed) == len(letters_word):
+        print()
+        print('You won!')
+        #break 
+
+if number_mistakes == number_mistakes_allowed:
+    print()
+print('You lost!')
+print("Game over! Play again?")
