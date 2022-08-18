@@ -7,16 +7,6 @@ wordDictionary = ["appartment", "house", "flowers", "diamonds", "python", "javas
 """ 
 Choose a random word
 """
-# randomWord = random.choice(wordDictionary)
-
-
-# def get_random_word():
-#   """
-#   Pick a random word from text file to be used in the game
-#   """
-#   random_word = random.choice(open("words.py", "r").read().split('\n'))
-#   return random_word.upper()
-
 def print_hangman(wrong):
     """
     Get the symbol of hangman displayed when wrong guesses are made
@@ -108,9 +98,6 @@ if __name__ == "__main__":
     current_letters_right = 0
 
     while (amount_of_times_wrong != 6 and current_letters_right != lenght_of_word_to_guess):
-        # print("This is what you have guessed: \n")
-        # for letter in current_letters_guessed:
-        #   print(letter, end=" ")
         """
         prompt user for input
         """
@@ -124,20 +111,5 @@ if __name__ == "__main__":
         current_letters_right = printWord(current_letters_guessed)
         printLines()
         print_hangman(amount_of_times_wrong)
-
-        # if(randomWord[current_guess_index] == letterGuessed):
-        #   print_hangman(amount_of_times_wrong)
-        #   """ print word
-        #   """
-        #   current_guess_index+=1
-        #   current_letters_guessed.append(letterGuessed)
-        #   printLines()
-        # When user was wrong
-        # else:
-        #   amount_of_times_wrong+=1
-        # current_letters_guessed.append(letterGuessed)
-        # Update drawing
-
-        # Print the word
 
     print("Game over! Play again?")
