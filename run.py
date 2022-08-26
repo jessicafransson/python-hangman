@@ -1,7 +1,8 @@
 import random
 """from words import word_list"""
-
-wordDictionary = ["appartment", "house", "flowers", "diamonds", "python", "javascript", "singer", "music",
+MAX_TURNS = 6
+game_running = True
+wordDictionary = ["apartment", "house", "flowers", "diamonds", "python", "javascript", "singer", "music",
                   "developer", "system", "book", "movie", "renovation", "display", "credit", "collection", "podcast"]
 
 """ 
@@ -85,7 +86,8 @@ def check_word_guess(guess, word):
     return False
 
 
-if __name__ == "__main__":
+# if name == "__main__":
+while(game_running):
     randomWord = random.choice(wordDictionary)
     print("Welcome to Hangman, let's play!")
     print("________________________________")
@@ -98,7 +100,7 @@ if __name__ == "__main__":
     current_letters_guessed = []
     current_letters_right = 0
 
-    while (amount_of_times_wrong != 6 and current_letters_right != lenght_of_word_to_guess):
+    while (amount_of_times_wrong != MAX_TURNS and current_letters_right != lenght_of_word_to_guess):
         """
         prompt user for input
         """
@@ -112,16 +114,20 @@ if __name__ == "__main__":
         current_letters_right = printWord(current_letters_guessed)
         printLines()
         print_hangman(amount_of_times_wrong)
-        print("Guesses left: {}".format(6-amount_of_times_wrong))
-    print("Game over! Play again?")
+        print("Guesses remaining = {}".format(MAX_TURNS - amount_of_times_wrong))
+        print("Correct guesses = {}".format(current_letters_right))
+        print(randomWord) # Use this to help debug
+        if current_letters_right >= len(randomWord):
+            print("\n\n You win \n\n")
+            break
+        elif amount_of_times_wrong >= MAX_TURNS:
+            print("\n\n You lose \n\n")
 
 
-    if len(letters_guessed) == len(letters_word):
-        print()
-        print('You won!')
-        #break 
+    keep_playing = input("\n Play again? (y/n) ")
+    if keep_playing in ['y', 'yes', 'ok', 'okay']:
+        game_running = True
+    else:
+        game_running = False
 
-if number_mistakes == number_mistakes_allowed:
-    print()
-print('You lost!')
-print("Game over! Play again?")
+print("You choose no, game over!")
