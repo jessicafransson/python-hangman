@@ -2,16 +2,17 @@ import random
 """from words import word_list"""
 MAX_TURNS = 6
 game_running = True
-wordDictionary = ["apartment", "house", "flowers", "diamonds", "python", "javascript", "singer", "music",
-                  "developer", "system", "book", "movie", "renovation", "display", "credit", "collection", "podcast"]
+wordDictionary = ["apartment", "house", "flowers", "diamonds", "python",
+                  "javascript", "singer", "music",
+                  "developer", "system", "book", "movie", "renovation",
+                  "display", "credit", "collection", "podcast"]
 
-""" 
+"""
 Choose a random word
 """
 def print_hangman(wrong):
-    """
-    Get the symbol of hangman displayed when wrong guesses are made
-    """
+
+    """Get the symbol of hangman displayed when wrong guesses are made"""
     if (wrong == 0):
         print("\n+---+")
         print("    |")
@@ -114,19 +115,19 @@ while(game_running):
         current_letters_right = printWord(current_letters_guessed)
         printLines()
         print_hangman(amount_of_times_wrong)
-        print("Guesses remaining = {}".format(MAX_TURNS - amount_of_times_wrong))
+        print("Remaining guesses = {}".format(MAX_TURNS - amount_of_times_wrong))
         print("Correct guesses = {}".format(current_letters_right))
-        print(randomWord) # Use this to help debug
         if current_letters_right >= len(randomWord):
-            print("\n\n You win \n\n")
+            print("\n\n You won! \n\n")
             break
         elif amount_of_times_wrong >= MAX_TURNS:
-            print("\n\n You lose \n\n")
+            print(randomWord)
+            print("\n\n You lost! \n\n")
 
 
-    keep_playing = input("\n Play again? (y/n) ")
-    if keep_playing in ['y', 'yes', 'ok', 'okay']:
-        game_running = True
+keep_playing = input("\n Play again? (y/n) ")
+if keep_playing in ['y', 'yes', 'ok', 'okay']:
+    game_running = True
     else:
         game_running = False
 
