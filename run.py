@@ -10,8 +10,9 @@ wordDictionary = ["apartment", "house", "flowers", "diamonds", "python",
 """
 Choose a random word
 """
-def print_hangman(wrong):
 
+
+def print_hangman(wrong):
     """Get the symbol of hangman displayed when wrong guesses are made"""
     if (wrong == 0):
         print("\n+---+")
@@ -121,7 +122,8 @@ while(game_running):
             print("\n\n You won! \n\n")
             break
         elif amount_of_times_wrong >= MAX_TURNS:
-            print ("\n\n You lost! The word was '" + randomWord + "', better luck next time!\n")
+            print("\n\n You lost! The word was '" + randomWord +
+                  "', better luck next time!\n")
 
     keep_playing = input("\n Play again? (y/n) ")
 
@@ -129,5 +131,6 @@ while(game_running):
         game_running = True
     else:
         game_running = False
+
 
 print("You choose no, game over!")
