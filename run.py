@@ -121,8 +121,7 @@ while(game_running):
             print("\n\n You won! \n\n")
             break
         elif amount_of_times_wrong >= MAX_TURNS:
-            print(randomWord)
-            print("\n\n You lost! \n\n")
+            print ("\n\n You lost! The word was '" + randomWord + "', better luck next time!\n")
 
     keep_playing = input("\n Play again? (y/n) ")
 
