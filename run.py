@@ -1,18 +1,14 @@
 import random
 """from words import word_list"""
-MAX_TURNS = 6
-game_running = True
-wordDictionary = ["apartment", "house", "flowers", "diamonds", "python",
-                  "javascript", "singer", "music",
-                  "developer", "system", "book", "movie", "renovation",
-                  "display", "credit", "collection", "podcast"]
-
-"""
+wordDictionary = ["appartment", "house", "flowers", "diamonds", "python", "javascript", "singer", "music",
+                  "developer", "system", "book", "movie", "renovation", "display", "credit", "collection", "podcast"]
+""" 
 Choose a random word
 """
 def print_hangman(wrong):
-
-    """Get the symbol of hangman displayed when wrong guesses are made"""
+    """
+    Get the symbol of hangman displayed when wrong guesses are made
+    """
     if (wrong == 0):
         print("\n+---+")
         print("    |")
@@ -87,8 +83,7 @@ def check_word_guess(guess, word):
     return False
 
 
-# if name == "__main__":
-while(game_running):
+if __name__ == "__main__":
     randomWord = random.choice(wordDictionary)
     print("Welcome to Hangman, let's play!")
     print("________________________________")
@@ -101,34 +96,28 @@ while(game_running):
     current_letters_guessed = []
     current_letters_right = 0
 
-    while (amount_of_times_wrong != MAX_TURNS and current_letters_right != lenght_of_word_to_guess):
-        """
-        prompt user for input
-        """
+    while (amount_of_times_wrong != 6 and current_letters_right != length_of_word_to_guess):
+        #prompt user for input
         letterGuessed = input("\nGuess a letter: ")
         """
-    If user is right
-    """
+        If user is right
+        """
         current_letters_guessed.append(letterGuessed)
         if check_word_guess(letterGuessed, randomWord) is False:
             amount_of_times_wrong += 1
         current_letters_right = printWord(current_letters_guessed)
         printLines()
         print_hangman(amount_of_times_wrong)
-        print("Remaining guesses = {}".format(MAX_TURNS - amount_of_times_wrong))
-        print("Correct guesses = {}".format(current_letters_right))
-        if current_letters_right >= len(randomWord):
-            print("\n\n You won! \n\n")
-            break
-        elif amount_of_times_wrong >= MAX_TURNS:
-            print(randomWord)
-            print("\n\n You lost! \n\n")
+        print("Guesses left: {}".format(6-amount_of_times_wrong))
+    print("Game over! Play again?")
 
 
-keep_playing = input("\n Play again? (y/n) ")
-if keep_playing in ['y', 'yes', 'ok', 'okay']:
-    game_running = True
-    else:
-        game_running = False
+    if len(current_letters_guessed) == len(letters_word):
+        print()
+        print('You won!')
+    #break 
 
-print("You choose no, game over!")
+if number_mistakes == number_mistakes_allowed:
+    print()
+print('You lost!')
+print("Game over! Play again?")
