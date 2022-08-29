@@ -102,12 +102,12 @@ while(game_running):
 
     while (amount_of_times_wrong != MAX_TURNS and
            current_letters_right != lenght_of_word_to_guess):
-        
+
         # prompt user for input
-        
         letterGuessed = input("\nGuess a letter: ")
-        
-    #print whether the guess is correct or false, and display the correct word with a wrong guess 
+
+# print whether the guess is correct or false,
+# and display the correct word with a wrong guess
         current_letters_guessed.append(letterGuessed)
         if check_word_guess(letterGuessed, randomWord) is False:
             amount_of_times_wrong += 1
@@ -131,5 +131,5 @@ while(game_running):
     else:
         game_running = False
 
-# ended game print this 
+# ended game print this
 print("You choose no, game over!")
