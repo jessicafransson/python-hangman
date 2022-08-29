@@ -80,16 +80,16 @@ def printLines():
     for char in randomWord:
         print("\u203E", end=" ")
 
-
+# check if the guessed word is correct or false
 def check_word_guess(guess, word):
     if guess in word:
         return True
     return False
 
-
+# run the game
 while(game_running):
     randomWord = random.choice(wordDictionary)
-    print("Welcome to Hangman, let's play!")
+    print("Welcome, let's play hangman!")
     print("________________________________")
     print_hangman(0)
     for x in randomWord:
@@ -102,13 +102,12 @@ while(game_running):
 
     while (amount_of_times_wrong != MAX_TURNS and
            current_letters_right != lenght_of_word_to_guess):
-        """
-        prompt user for input
-        """
+        
+        # prompt user for input
+        
         letterGuessed = input("\nGuess a letter: ")
-        """
-    If user is right
-    """
+        
+    #print whether the guess is correct or false, and display the correct word with a wrong guess 
         current_letters_guessed.append(letterGuessed)
         if check_word_guess(letterGuessed, randomWord) is False:
             amount_of_times_wrong += 1
@@ -124,7 +123,7 @@ while(game_running):
         elif amount_of_times_wrong >= MAX_TURNS:
             print("\n\n You lost! The word was '" + randomWord +
                   "', better luck next time!\n")
-
+    # choose to reset the game or start again
     keep_playing = input("\n Play again? (y/n) ")
 
     if keep_playing in ['y', 'yes', 'ok', 'okay']:
@@ -132,5 +131,5 @@ while(game_running):
     else:
         game_running = False
 
-
+# ended game print this 
 print("You choose no, game over!")
