@@ -1,4 +1,5 @@
 import random
+
 """from words import word_list"""
 MAX_TURNS = 6
 game_running = True
@@ -75,19 +76,22 @@ def printWord(guessedLetters):
 
 def printLines():
     """
+    print the correct word
     """
     print("\r")
     for char in randomWord:
         print("\u203E", end=" ")
 
-# check if the guessed word is correct or false
+
 def check_word_guess(guess, word):
+    """check if the guessed word is correct or false"""
     if guess in word:
         return True
     return False
 
-# run the game
-while(game_running):
+
+"""run the game"""
+while (game_running):
     randomWord = random.choice(wordDictionary)
     print("Welcome, let's play hangman!")
     print("________________________________")
@@ -99,15 +103,18 @@ while(game_running):
     current_guess_index = 0
     current_letters_guessed = []
     current_letters_right = 0
+    keep_playing = "no"
 
     while (amount_of_times_wrong != MAX_TURNS and
            current_letters_right != lenght_of_word_to_guess):
 
-        # prompt user for input
+        """prompt user for input"""
         letterGuessed = input("\nGuess a letter: ")
 
-# print whether the guess is correct or false,
-# and display the correct word with a wrong guess
+        """
+        print whether the guess is correct or false,
+        and display the correct word with a wrong guess
+        """
         current_letters_guessed.append(letterGuessed)
         if check_word_guess(letterGuessed, randomWord) is False:
             amount_of_times_wrong += 1
@@ -123,7 +130,8 @@ while(game_running):
         elif amount_of_times_wrong >= MAX_TURNS:
             print("\n\n You lost! The word was '" + randomWord +
                   "', better luck next time!\n")
-    # choose to reset the game or start again
+
+    """choose to reset the game or start again"""
     keep_playing = input("\n Play again? (y/n) ")
 
     if keep_playing in ['y', 'yes', 'ok', 'okay']:
@@ -131,5 +139,5 @@ while(game_running):
     else:
         game_running = False
 
-# ended game print this
+"""ended game print this"""
 print("You choose no, game over!")
