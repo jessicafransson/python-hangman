@@ -4,9 +4,9 @@ import random
 MAX_TURNS = 6
 game_running = True
 word_dictionary = ["apartment", "house", "flowers", "diamonds", "python",
-                    "javascript", "singer", "music",
-                    "developer", "system", "book", "movie", "renovation",
-                    "display", "credit", "collection", "podcast"]
+                  "javascript", "singer", "music",
+                  "developer", "system", "book", "movie", "renovation",
+                  "display", "credit", "collection", "podcast"]
 
 """
 Choose a random word
@@ -59,13 +59,13 @@ def print_hangman(wrong):
         print("    ===")
 
 
-def print_word(guessed_letters):
+def print_word(guessedLetters):
     """ Display the guesses being made and counting
     """
     counter = 0
     right_letters = 0
     for char in random_word:
-        if (char in guessed_letters):
+        if (char in guessedLetters):
             print(random_word[counter].upper(), end=" ")
             right_letters += 1
         else:
@@ -89,16 +89,20 @@ def check_word_guess(guess, word):
         return True
     return False
 
+
 def ask_input(text, valid_values_list):
     input_is_valid = False
     while input_is_valid is False:
         input_value = input(text)
-        if input_value in valid_values_list:
+        if input_value.lower() in valid_values_list:
             input_is_valid = True
         else:
             print(f"Please enter a valid option: {str(valid_values_list)}")
+    return input_value
 
-"""main game section"""
+
+
+"""run the game"""
 if __name__ == "__main__":
     while (game_running):
         random_word = random.choice(word_dictionary)
@@ -107,7 +111,6 @@ if __name__ == "__main__":
         print_hangman(0)
         for x in random_word:
             print("_ ", end="")
-        """ section for guesses correct/wrong """
         lenght_of_word_to_guess = len(random_word)
         amount_of_times_wrong = 0
         current_guess_index = 0
@@ -119,7 +122,8 @@ if __name__ == "__main__":
             current_letters_right != lenght_of_word_to_guess):
 
             """prompt user for input"""
-            letterGuessed = input("\nGuess a letter: ")
+            # letterGuessed = input("\nGuess a letter: ")
+            letterGuessed = ask_input("\nGuess a letter: ", ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t"])
 
             """
             print whether the guess is correct or false,
@@ -139,12 +143,11 @@ if __name__ == "__main__":
                 break
             elif amount_of_times_wrong >= MAX_TURNS:
                 print("\n\n You lost! The word was '" + random_word +
-                        "', better luck next time!\n")
+                    "', better luck next time!\n")
 
         """choose to reset the game or start again"""
-        keep_playing = input("\n Play again? (y/n) ")
-        # keep_playing = ask_input("\n Play again? (y/n) ", ["y", "n"])
-
+        #keep_playing = input("\n Play again? (y/n) ")
+        keep_playing = ask_input("\n Play again? (y/n) ", ['y', 'yes', 'ok', 'okay', 'n', 'no'])
         if keep_playing in ['y', 'yes', 'ok', 'okay']:
             game_running = True
         else:
