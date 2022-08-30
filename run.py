@@ -4,9 +4,9 @@ import random
 MAX_TURNS = 6
 game_running = True
 word_dictionary = ["apartment", "house", "flowers", "diamonds", "python",
-                  "javascript", "singer", "music",
-                  "developer", "system", "book", "movie", "renovation",
-                  "display", "credit", "collection", "podcast"]
+                    "javascript", "singer", "music",
+                    "developer", "system", "book", "movie", "renovation",
+                    "display", "credit", "collection", "podcast"]
 
 """
 Choose a random word
@@ -98,7 +98,7 @@ def ask_input(text, valid_values_list):
         else:
             print(f"Please enter a valid option: {str(valid_values_list)}")
 
-"""run the game"""
+"""main game section"""
 if __name__ == "__main__":
     while (game_running):
         random_word = random.choice(word_dictionary)
@@ -107,6 +107,7 @@ if __name__ == "__main__":
         print_hangman(0)
         for x in random_word:
             print("_ ", end="")
+        """ section for guesses correct/wrong """
         lenght_of_word_to_guess = len(random_word)
         amount_of_times_wrong = 0
         current_guess_index = 0
@@ -138,11 +139,11 @@ if __name__ == "__main__":
                 break
             elif amount_of_times_wrong >= MAX_TURNS:
                 print("\n\n You lost! The word was '" + random_word +
-                    "', better luck next time!\n")
+                        "', better luck next time!\n")
 
         """choose to reset the game or start again"""
-        #keep_playing = input("\n Play again? (y/n) ")
-        keep_playing = ask_input("\n Play again? (y/n) ", ["y", "n"])
+        keep_playing = input("\n Play again? (y/n) ")
+        # keep_playing = ask_input("\n Play again? (y/n) ", ["y", "n"])
 
         if keep_playing in ['y', 'yes', 'ok', 'okay']:
             game_running = True
