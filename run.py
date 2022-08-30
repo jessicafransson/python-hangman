@@ -3,7 +3,7 @@ import random
 """from words import word_list"""
 MAX_TURNS = 6
 game_running = True
-wordDictionary = ["apartment", "house", "flowers", "diamonds", "python",
+word_dictionary = ["apartment", "house", "flowers", "diamonds", "python",
                   "javascript", "singer", "music",
                   "developer", "system", "book", "movie", "renovation",
                   "display", "credit", "collection", "podcast"]
@@ -93,7 +93,7 @@ def check_word_guess(guess, word):
 """run the game"""
 if __name__ == "__main__":
     while (game_running):
-        random_word = random.choice(wordDictionary)
+        random_word = random.choice(word_dictionary)
         print("Welcome, let's play hangman!")
         print("________________________________")
         print_hangman(0)
