@@ -141,7 +141,8 @@ if __name__ == "__main__":
                     "', better luck next time!\n")
 
         """choose to reset the game or start again"""
-        keep_playing = input("\n Play again? (y/n) ")
+        #keep_playing = input("\n Play again? (y/n) ")
+        keep_playing = ask_input("\n Play again? (y/n) ", ["y", "n"])
 
         if keep_playing in ['y', 'yes', 'ok', 'okay']:
             game_running = True
