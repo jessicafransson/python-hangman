@@ -89,6 +89,14 @@ def check_word_guess(guess, word):
         return True
     return False
 
+def ask_input(text, valid_values_list):
+    input_is_valid = False
+    while input_is_valid is False:
+        input_value = input(text)
+        if input_value in valid_values_list:
+            input_is_valid = True
+        else:
+            print(f"Please enter a valid option: {str(valid_values_list)}")
 
 """run the game"""
 if __name__ == "__main__":
