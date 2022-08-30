@@ -59,13 +59,13 @@ def print_hangman(wrong):
         print("    ===")
 
 
-def print_word(guessedLetters):
+def print_word(guessed_letters):
     """ Display the guesses being made and counting
     """
     counter = 0
     right_letters = 0
     for char in random_word:
-        if (char in guessedLetters):
+        if (char in guessed_letters):
             print(random_word[counter].upper(), end=" ")
             right_letters += 1
         else:
