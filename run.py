@@ -122,15 +122,14 @@ if __name__ == "__main__":
             current_letters_right != lenght_of_word_to_guess):
 
             """prompt user for input"""
-            # letterGuessed = input("\nGuess a letter: ")
-            letterGuessed = ask_input("\nGuess a letter: ", ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t"])
+            letter_guessed = ask_input("\nGuess a letter: ", ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"])
 
             """
             print whether the guess is correct or false,
             and display the correct word with a wrong guess
             """
-            current_letters_guessed.append(letterGuessed)
-            if check_word_guess(letterGuessed, random_word) is False:
+            current_letters_guessed.append(letter_guessed)
+            if check_word_guess(letter_guessed, random_word) is False:
                 amount_of_times_wrong += 1
             current_letters_right = print_word(current_letters_guessed)
             print_lines()
@@ -146,7 +145,6 @@ if __name__ == "__main__":
                     "', better luck next time!\n")
 
         """choose to reset the game or start again"""
-        #keep_playing = input("\n Play again? (y/n) ")
         keep_playing = ask_input("\n Play again? (y/n) ", ['y', 'yes', 'ok', 'okay', 'n', 'no'])
         if keep_playing in ['y', 'yes', 'ok', 'okay']:
             game_running = True
