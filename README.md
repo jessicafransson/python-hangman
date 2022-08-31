@@ -21,6 +21,10 @@ The target for this game is someone that needs a few minutes break to pass time.
 * If the player writes yes, or y the game starts over.
 * If the player writes no the game ends. 
 
+## Find the live game here
+
+https://hangmanjf.herokuapp.com/
+
 ## Here's how the game is displayed:  
 
 
@@ -56,13 +60,15 @@ The target for this game is someone that needs a few minutes break to pass time.
 
 ## Created the Heroku app
 
+* I started with creating a _Config Var_ called `PORT`, and set this to `8000` in my Heroku page.  
+
 * I created the app using following steps:  
 * I added two buildpacks from the _Settings_ tab. The ordering is as follows:
 
 1. `heroku/python`
 2. `heroku/nodejs`
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+* The importance here is to first have the Python, and after it the nodejs for it to work properly.
 
 # Technologies used
 
