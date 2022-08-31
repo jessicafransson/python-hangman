@@ -1,3 +1,5 @@
+# About
+
 ## Hangman
 
 Hangman is a game meant to be something to pass time with, guessing letters of a word without getting the man hung.
@@ -12,7 +14,7 @@ The target for this game is someone that needs a few minutes break to pass time.
 * Player gets information if the guess is correct or false
 * The player is displayed with a presentation of previous guesses
 * The player will have a display with lines, and correct words printed.
-* The player will be see the previous guess if its wrong.
+* The player will see the previous guess if its wrong.
 * For every wrong guess there's one more attachment for the hanging man.
 * After 6 guesses if word is not guessed, the player will be displayed with the correct word.
 * The player will be displayed with a choise to either play a new game or finish the game. 
@@ -45,6 +47,12 @@ The target for this game is someone that needs a few minutes break to pass time.
 
 ### You can either press yes or no to either restart the game or end the loop.  
 
+# Testing and deploying project
+
+### Testing thru the Pep8 website 
+
+[Pep8](http://pep8online.com/) - I tested my Python code here for validation, displayed no errors.  
+![pep8 message no errors](images/pep8validator.png "Displaying Pep8 validator without errors"). 
 
 ## Created the Heroku app
 
@@ -56,7 +64,26 @@ The target for this game is someone that needs a few minutes break to pass time.
 
 You must then create a _Config Var_ called `PORT`. Set this to `8000`
 
-## Inspiration and doc of text:
+# Technologies used
+
+* This project was made using only Python.  
+* Code is written in gitpod.  
+* This project has been deployed to Heroku.  
+
+# Future additions.   
+
+* Due to loosing a week i decided to skip some features because of lack of time.  
+(I got notification of extension only a day before deadline when my game was already completed).  
+* I would have added a step before game start to enter user name.  
+* I would have added a nicer way to display how to not guess numbers, symbols or empty space.  
+* I would have added a cleaner way to display previous guesses.   
+
+# Errors and issues. 
+
+* I had an error with getting the user to not be able to guess empty letters, numbers or symbols. I fixed this by adding the def ask input.  
+* I had issues with the indetation which was giving me errors in PEP8.  I fixed that by going over my code and sorting out indentations
+
+# Credits and content
 
 ### Kite on youtube
 
@@ -72,17 +99,7 @@ You must then create a _Config Var_ called `PORT`. Set this to `8000`
 
 [Symbols](https://gist.github.com/chrishorton/8510732aa9a80a03c829b09f12e20d9c) - I got the symbols for hangman from here.
 
+# Acknowledgements
 
-## Testing and deploying
-
-### Testing thru the Pep8 website 
-
-[Pep8](http://pep8online.com/) - I tested my Python code here for validation, displayed no errors.  
-![pep8 message no errors](images/pep8validator.png "Displaying Pep8 validator without errors"). 
-
-## Future additions.   
-
-* Due to loosing a week i decided to skip some features because of lack of time. 
-(I got notification of extension only a day before deadline when my game was completed)
-* If i would have proceded with the extension i would have:  
-* Added a step before game start to enter user name
+* This is a game for Project 3 for the Full Stack Software Developer program with Code Institute.  
+## Jessica Fransson, 2022
