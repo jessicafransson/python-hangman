@@ -138,7 +138,7 @@ if __name__ == "__main__":
                                                 amount_of_times_wrong))
             print("Correct guesses = {}".format(current_letters_right))
             if current_letters_right >= len(random_word):
-                print("\n\n You won! \n\n")
+                print("\n\nYay, you won! \n\n")
                 break
             elif amount_of_times_wrong >= MAX_TURNS:
                 print("\n\n You lost! The word was '" + random_word +
@@ -152,4 +152,4 @@ if __name__ == "__main__":
             game_running = False
 
     """ended game print this"""
-    print("You choose no, game over!")
+    print("Ok, see you next time!")
