@@ -18,6 +18,14 @@ The target for this game is someone that needs a few minutes break to pass time.
 * If the player writes yes, or y the game starts over.
 * If the player writes no the game ends. 
 
+## The game
+
+* You first get a welcome message, saying let's play! 
+* You get the message with Guess a letter:
+* If you try guessing anything but a letter, you get asked to enter a valid option, and the suggestions of the letters valid,
+* If you guess the wrong letter you get displayed the amount of guesses you have left, it also displays amount of correct guesses which here shows as 0.
+* If you guess the correct word, the letter is displayed on the line for the word, and correct guesses starts counting with 1. 
+
 
 ## Created the Heroku app
 
